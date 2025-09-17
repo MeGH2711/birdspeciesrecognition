@@ -1,0 +1,3 @@
+1. Updated classes.txt file manually
+2. Updated image_class_labels.txt file in the dataset as per the selected species using pandas functions [Conversion of the txt files to csv files and making updates through functions, and then again converting the csv back to txt file]
+3. Updated images.txt file manually
