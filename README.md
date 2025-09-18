@@ -26,6 +26,8 @@ Key features:
 - Clean training pipeline with data augmentation.
 - Option to deploy as a web demo (Streamlit/Flask).
 
+Get the project documentation and step by step implementation : [Project Documentation](https://colab.research.google.com/drive/1Ff72-yVkSh6Bnm-HwVrTf9IDdOpcvWBd?usp=sharing)
+
 ---
 
 ## 📂 Dataset
