@@ -6,7 +6,7 @@
 
 ## 📌 Table of Contents
 - [About the Project](#about-the-project)
-- [Dataset](#dataset)
+- [Dataset](https://github.com/MeGH2711/birdspeciesrecognition/blob/main/README.md#-dataset)
 
 ---
 
