@@ -1,4 +1,4 @@
-# 🐦 Bird Species Detection using Deep Learning on the CUB-200-2011 Dataset
+# Bird Species Detection using Deep Learning on the CUB-200-2011 Dataset
 
 > A fine-grained image recognition project that classifies bird species from images using attention-based and part-based deep learning models.
 
