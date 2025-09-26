@@ -7,7 +7,7 @@
 ## 📌 Table of Contents
 - [About the Project](#about-the-project)
 - [Dataset](#dataset)
-- [Research Papers](#research-papers)
+<!-- - [Research Papers](#research-papers) -->
 
 ---
 
@@ -39,7 +39,7 @@ Get the project documentation and step by step implementation : [Project Documen
 
 ---
 
-## Research Papers
+<!-- ## Research Papers
 The following research papers were referred to for model implementation and understanding:
 
 1. **RA-CNN (Recurrent Attention CNN)**  
@@ -55,4 +55,4 @@ The following research papers were referred to for model implementation and unde
 3. **Part-based R-CNN**  
    Zhang, N., Donahue, J., Girshick, R., & Darrell, T. (2014).  
    *Part-based R-CNNs for Fine-grained Category Detection*.  
-   ECCV 2014. [Paper Link](https://arxiv.org/abs/1407.3867)
+   ECCV 2014. [Paper Link](https://arxiv.org/abs/1407.3867) -->
