@@ -7,10 +7,11 @@
 ## 📌 Table of Contents
 - [About the Project](#about-the-project)
 - [Dataset](#dataset)
+- [Research Papers](#research-papers)
 
 ---
 
-## 📖 About the Project
+## About the Project
 Bird species identification is a challenging **fine-grained classification** task because species often differ by subtle visual cues (e.g., beak color, tail shape).
 
 This repository implements and compares three approaches:
@@ -30,10 +31,28 @@ Get the project documentation and step by step implementation : [Project Documen
 
 ---
 
-## 📂 Dataset
+## Dataset
 - **Name:** Caltech–UCSD Birds-200-2011  
 - **Size:** 11,788 images across 200 species  
 - **Annotations:** 15 part locations, 312 attributes, bounding boxes  
 - **Download:** [CUB-200-2011 dataset](https://www.kaggle.com/datasets/wenewone/cub2002011)
 
 ---
+
+## Research Papers
+The following research papers were referred to for model implementation and understanding:
+
+1. **RA-CNN (Recurrent Attention CNN)**  
+   Fu, J., Zheng, H., & Mei, T. (2017).  
+   *Look Closer to See Better: Recurrent Attention Convolutional Neural Network for Fine-grained Image Recognition*.  
+   CVPR 2017. [Paper Link](https://arxiv.org/abs/1703.00760)
+
+2. **MA-CNN (Multi-Attention CNN)**  
+   Zheng, H., Fu, J., Zha, Z.J., & Luo, J. (2017).  
+   *Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition*.  
+   ICCV 2017. [Paper Link](https://arxiv.org/abs/1703.06617)
+
+3. **Part-based R-CNN**  
+   Zhang, N., Donahue, J., Girshick, R., & Darrell, T. (2014).  
+   *Part-based R-CNNs for Fine-grained Category Detection*.  
+   ECCV 2014. [Paper Link](https://arxiv.org/abs/1407.3867)
