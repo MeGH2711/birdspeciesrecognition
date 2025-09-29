@@ -42,8 +42,8 @@ Get the project documentation and step by step implementation : [Project Documen
 <!-- ## Research Papers
 The following research papers were referred to for model implementation and understanding:
 
-1. **RA-CNN (Recurrent Attention CNN)**  
-   Fu, J., Zheng, H., & Mei, T. (2017).  
+1. **Bird Species Categorization Using Pose Normalized Deep Convolutional Nets**  
+   Steve Branson, Grant Van Horn, Serge Belongie, Pietro Perona  
    *Look Closer to See Better: Recurrent Attention Convolutional Neural Network for Fine-grained Image Recognition*.  
    CVPR 2017. [Paper Link](https://arxiv.org/abs/1703.00760)
 
