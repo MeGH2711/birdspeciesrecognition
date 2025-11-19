@@ -1,58 +1,155 @@
-# Bird Species Detection using Deep Learning on the CUB-200-2011 Dataset
+# 🐦 Bird Species Detection Using Deep Learning  
+### Fine-Grained Image Classification using Vision Transformer (ViT-B/16)
 
-> A fine-grained image recognition project that classifies bird species from images using attention-based and part-based deep learning models.
-
----
-
-## 📌 Table of Contents
-- [About the Project](#about-the-project)
-- [Dataset](#dataset)
-<!-- - [Research Papers](#research-papers) -->
+This project focuses on automated bird species recognition using the **CUB-200-2011 dataset** and **Vision Transformer (ViT-B/16)**. It includes cleaning, augmentation, model training, and a full evaluation pipeline for fine-grained species classification.
 
 ---
 
-## About the Project
-Bird species identification is a challenging **fine-grained classification** task because species often differ by subtle visual cues (e.g., beak color, tail shape).
+## 📌 Overview
 
-This repository implements and compares three approaches:
-- **RA-CNN (Recurrent Attention CNN)**  
-- **MA-CNN (Multi-Attention CNN)**  
-- **Part-based R-CNN**
+Bird species identification is a challenging fine-grained classification task due to subtle visual differences between species.  
+This project builds a complete pipeline—from dataset preparation to model analysis—achieving:
 
-All experiments use the [CUB-200-2011 dataset](https://www.kaggle.com/datasets/wenewone/cub2002011). The project contains data preprocessing, model implementations, training scripts, evaluation scripts, and a lightweight demo for inference.
-
-Key features:
-- Attention-based localization of discriminative regions.
-- Part-based detection for pose-normalized representations.
-- Clean training pipeline with data augmentation.
-- Option to deploy as a web demo (Streamlit/Flask).
-
-Get the project documentation and step by step implementation : [Project Documentation](https://colab.research.google.com/drive/1Ff72-yVkSh6Bnm-HwVrTf9IDdOpcvWBd?usp=sharing)
+**➡️ Final Accuracy: 87.12%**
 
 ---
 
-## Dataset
-- **Name:** Caltech–UCSD Birds-200-2011  
-- **Size:** 11,788 images across 200 species  
-- **Annotations:** 15 part locations, 312 attributes, bounding boxes  
-- **Download:** [CUB-200-2011 dataset](https://www.kaggle.com/datasets/wenewone/cub2002011)
+## 🚀 Features
+
+- ✔️ Fine-grained classification using **ViT-B/16**  
+- ✔️ Comprehensive **data cleaning & augmentation**  
+- ✔️ Custom **80:10:10 stratified split**  
+- ✔️ Detailed **misclassification analysis**  
+- ✔️ Graphs: accuracy, loss, confusion matrix, workflow diagram  
 
 ---
 
-<!-- ## Research Papers
-The following research papers were referred to for model implementation and understanding:
+## 📁 Dataset (CUB-200-2011)
 
-1. **Bird Species Categorization Using Pose Normalized Deep Convolutional Nets**  
-   Steve Branson, Grant Van Horn, Serge Belongie, Pietro Perona  
-   *Look Closer to See Better: Recurrent Attention Convolutional Neural Network for Fine-grained Image Recognition*.  
-   CVPR 2017. [Paper Link](https://arxiv.org/abs/1703.00760)
+- **11,788 total images**
+- **200 bird species**
+- Includes:
+  - Bounding boxes  
+  - Part annotations  
+  - Labels and metadata  
 
-2. **MA-CNN (Multi-Attention CNN)**  
-   Zheng, H., Fu, J., Zha, Z.J., & Luo, J. (2017).  
-   *Learning Multi-Attention Convolutional Neural Network for Fine-Grained Image Recognition*.  
-   ICCV 2017. [Paper Link](https://arxiv.org/abs/1703.06617)
+### Dataset Improvements
+- Removed **60+ mislabeled/low-quality images**
+- Added images for weak classes
+- Improved class balance via custom split
 
-3. **Part-based R-CNN**  
-   Zhang, N., Donahue, J., Girshick, R., & Darrell, T. (2014).  
-   *Part-based R-CNNs for Fine-grained Category Detection*.  
-   ECCV 2014. [Paper Link](https://arxiv.org/abs/1407.3867) -->
+---
+
+## 🧠 Model Architecture – ViT-B/16
+
+Key components:
+- Image patch extraction (16×16)
+- Patch embedding + positional encoding
+- Transformer encoder blocks
+- [CLS] token for classification
+- MLP classifier head
+
+Training Setup:
+- Optimizer: **AdamW**
+- Scheduler: **Cosine Annealing**
+- Mixed precision: **FP16 / AMP**
+- Gradient clipping enabled
+
+---
+
+## 🛠 Methodology
+
+### 1️⃣ Dataset Preparation
+- Merged metadata (labels, bounding boxes)
+- Stratified train/val/test split
+
+### 2️⃣ Data Cleaning
+- Outlier detection using PCA + t-SNE
+- Manual image verification
+- Removed inconsistent bounding boxes
+
+### 3️⃣ Data Augmentation
+- RandomResizedCrop  
+- Horizontal/vertical flip  
+- Minor rotations  
+- Color jitter  
+- ImageNet normalization  
+
+### 4️⃣ Training Process
+- Batch Size: 32  
+- Epochs: ~50  
+- Early stopping enabled  
+
+### 5️⃣ Evaluation Metrics
+- Accuracy  
+- Precision / Recall / F1  
+- Confusion matrix  
+- Per-class accuracy  
+
+---
+
+## 📊 Results
+
+### 🔥 Final Test Accuracy  
+**87.12%**
+
+### 📈 Accuracy Progression
+
+| Stage | Accuracy (%) |
+|-------|--------------|
+| ResNet18 Baseline | 55.00 |
+| ViT-B/16 (Minimal Augmentation) | 84.00 |
+| Stronger Augmentation | 86.00 |
+| Custom Stratified Split | 88.00 |
+| Added External Images | 89.40 |
+| After Cleaning Mislabeled Images | 87.12 |
+| Cleaning + 50:50 Split | 87.15 |
+
+---
+
+## 🧩 Misclassification Analysis
+
+- **70.2%** of errors occur **within the same bird family**
+- Highest confusion among:
+  - Warblers  
+  - Sparrows  
+  - Thrushes  
+- Difficult cases involve:
+  - Poor lighting  
+  - Occlusions  
+  - Juvenile/non-breeding plumage  
+
+---
+
+## 🖼 Visual Outputs (Included in Report)
+
+- ViT-B/16 architecture diagram  
+- Accuracy vs epoch curve  
+- Loss curves  
+- Confusion matrix  
+- Misclassified image samples  
+- Workflow flowchart  
+
+---
+
+## 🔮 Future Enhancements
+
+### Dataset
+- Add verified images from iNaturalist / GBIF
+- Expert validation of ambiguous species
+
+### Model
+- Try ViT-L/16 or Swin-L transformer  
+- Hierarchical classification (family → species)  
+- Part-based attention (head, wings, tail)  
+- Bird pose estimation integration  
+
+---
+
+**Megh Patel** (AU2544020)
+
+**Konark Karia** (AU2544011)
+
+**School of Engineering & Applied Science**
+
+**Ahmedabad University**
