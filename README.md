@@ -147,6 +147,9 @@ Training Setup:
 ---
 
 **Megh Patel** (AU2544020)
+
 **Konark Karia** (AU2544011)
-**School of Engineering & Applied Science
-Ahmedabad University**
+
+**School of Engineering & Applied Science**
+
+**Ahmedabad University**
