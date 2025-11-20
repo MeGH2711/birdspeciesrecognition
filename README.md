@@ -1,4 +1,4 @@
-# 🐦 Bird Species Detection Using Deep Learning  
+# Bird Species Detection Using Deep Learning  
 ### Fine-Grained Image Classification using Vision Transformer (ViT-B/16)
 
 This project focuses on automated bird species recognition using the **CUB-200-2011 dataset** and **Vision Transformer (ViT-B/16)**. It includes cleaning, augmentation, model training, and a full evaluation pipeline for fine-grained species classification.
